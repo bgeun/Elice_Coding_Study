@@ -6,7 +6,10 @@ for i in range(t):
     h, w, n = map(int, input().split())
 
     floor = n % h
-    ho = n // h + 1
+    ho = (n // h) + 1
+    
+    if floor == 0:
+        floor = 1
 
     if(ho < 10):
         result.append(str(floor) + "0" + str(ho))
