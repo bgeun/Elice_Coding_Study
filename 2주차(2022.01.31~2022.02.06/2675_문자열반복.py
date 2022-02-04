@@ -10,3 +10,4 @@ for i in range(t):
         print(arr[i][1][j] * int(arr[i][0]), end='')
         
     print()
+

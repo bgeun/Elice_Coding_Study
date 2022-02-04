@@ -1,6 +1,3 @@
-from audioop import reverse
-
-
 result = []
 
 while(1):

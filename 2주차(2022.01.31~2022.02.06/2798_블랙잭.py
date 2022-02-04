@@ -11,4 +11,4 @@ for i in range(0,n-2):
             else:
                 ans = max(ans, sum)
                 
-print(ans)         
+print(ans)

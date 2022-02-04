@@ -15,6 +15,6 @@ for i in range(n):
         else:
             cnt = 0;
 
-for i in range(n):
-    print(result[i])
+for i in result:
+    print(i)
         
