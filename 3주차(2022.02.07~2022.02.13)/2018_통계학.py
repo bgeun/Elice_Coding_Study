@@ -19,6 +19,8 @@ for i in arr:
         dic[i] = 1
     else:
         dic[i] += 1
+
+
 sorted_dic = sorted(dic.items(), key=lambda x: x[1], reverse=True)
 
 max_num = sorted_dic[0][1]
@@ -28,9 +30,10 @@ for i in sorted_dic:
     if(i[1] == max_num):
         max_list.append(i[0])
 
+
 if len(max_list) >= 2:
-    max_list.sort(reverse=True)
-    print(max_list[-2])
+    max_list.sort()
+    print(max_list[1])
 else:
     print(max_list[0])
 
