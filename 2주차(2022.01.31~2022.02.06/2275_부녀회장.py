@@ -21,9 +21,3 @@ for i in range(t):
 
 for i in range(t):
     print(result[i])
-
-
-
-
-
-
