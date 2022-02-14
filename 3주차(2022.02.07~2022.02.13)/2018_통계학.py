@@ -20,8 +20,7 @@ for i in arr:
     else:
         dic[i] += 1
 
-
-sorted_dic = sorted(dic.items(), key=lambda x: x[1], reverse=True)
+sorted_dic = sorted(dic.items(), key=lambda x: -x[1])
 
 max_num = sorted_dic[0][1]
 max_list = []
