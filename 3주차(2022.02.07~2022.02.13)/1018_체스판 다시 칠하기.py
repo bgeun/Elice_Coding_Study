@@ -29,4 +29,5 @@ for i in range(n-7):
     for j in range(m-7):
         check(i, j)
 
+print(paint)
 print(min(paint))
