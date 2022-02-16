@@ -6,18 +6,14 @@ n, m = map(int, input().split())
 result = []
 n_dic = {}
 
-
 for i in range(n):
-    x = input().rstrip()
-    if x not in n_dic:
-        n_dic[x] = i
+    x = input().rstrip().split()
+    n_dic[x[0]] = x[1]
 
 for i in range(m):
     x = input().rstrip()
     if x in n_dic:
-        result.append(x)
+        result.append(n_dic[x])
 
-result.sort()
-print(len(result))
 for i in result:
     print(i)
