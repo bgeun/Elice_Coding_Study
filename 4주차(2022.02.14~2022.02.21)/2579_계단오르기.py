@@ -21,5 +21,3 @@ else:
         dp[i] = max(dp[i - 3] + arr[i] + arr[i - 1], dp[i - 2] + arr[i])
 
     print(dp[n])
-
-# https://daimhada.tistory.com/181
