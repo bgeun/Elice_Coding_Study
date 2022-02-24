@@ -12,7 +12,7 @@ def cut(x, y, N):
     check = paper[x][y]
     for i in range(x, x + N):
         for j in range(y, y + N):
-            if check != paper[i][j]:  # 종이가 보두 같은 수 인지 검사
+            if check != paper[i][j]:  # 종이가 모두 같은 수 인지 검사
                 cut(x, y, N // 3)
                 cut(x, y + N // 3, N // 3)
                 cut(x, y + (N // 3 * 2), N // 3)
