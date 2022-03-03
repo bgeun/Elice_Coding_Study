@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 
 input = sys.stdin.readline
 
@@ -14,14 +15,30 @@ for _ in range(M):
     graph[y].append(x)
 
 
-def dfs(graph, v, visited):
+# def dfs(graph, v, visited):
+#     visited[v] = True
+#     for i in graph[v]:
+#         if not visited[i]:
+#             dfs(graph, i, visited)
+
+
+# dfs(graph, 1, visited)
+
+# res = list(filter(lambda x: x == True, visited))
+# print(len(res) - 1)
+
+
+def bfs(v):
+    queue = deque([v])
     visited[v] = True
-    for i in graph[v]:
-        if not visited[i]:
-            dfs(graph, i, visited)
+    while queue:
+        x = queue.popleft()
+        for i in graph[x]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i] = True
 
 
-dfs(graph, 1, visited)
-
+bfs(1)
 res = list(filter(lambda x: x == True, visited))
 print(len(res) - 1)
