@@ -14,7 +14,7 @@ for _ in range(M):
     graph[y].append(x)
 
 
-def bfs(graph, start):
+def bfs(start):
     num = [0] * (N + 1)
 
     queue = deque([start])
@@ -34,6 +34,6 @@ result = []
 
 for i in range(1, N + 1):
     visited = [False] * (N + 1)
-    result.append(bfs(graph, i))
+    result.append(bfs(i))
 
 print(result.index(min(result)) + 1)
