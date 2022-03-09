@@ -13,6 +13,8 @@ for _ in range(M):
     graph[x].append(y)
     graph[y].append(x)
 
+print(graph)
+
 
 def bfs(start):
     num = [0] * (N + 1)
@@ -27,6 +29,7 @@ def bfs(start):
                 num[i] = num[v] + 1
                 queue.append(i)
                 visited[i] = True
+    print("num: ", num)
     return sum(num)
 
 
@@ -35,5 +38,5 @@ result = []
 for i in range(1, N + 1):
     visited = [False] * (N + 1)
     result.append(bfs(i))
-
+print("result: ", result)
 print(result.index(min(result)) + 1)

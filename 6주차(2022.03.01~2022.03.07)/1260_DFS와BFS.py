@@ -18,6 +18,7 @@ for i in range(m):
 
 for i in range(len(array)):
     array[i].sort()
+print(array)
 
 
 def dfs(array, v, visited):
