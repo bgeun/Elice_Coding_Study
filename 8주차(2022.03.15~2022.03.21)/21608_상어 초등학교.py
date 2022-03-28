@@ -10,8 +10,8 @@ input = sys.stdin.readline
 n = int(input())
 dict = defaultdict(list)
 
-dx = [-1, 0, 1, 0]
-dy = [0, 1, 0, -1]
+dx = [1, -1, 0, 0]
+dy = [0, 0, 1, -1]
 graph = [[0 for _ in range(n)] for _ in range(n)]
 
 for _ in range(n * n):
@@ -31,7 +31,8 @@ for student, like in dict.items():
             if graph[i][j] != 0:
                 continue
             for k in range(4):
-                nx, ny = i + dx[k], j + dy[k]
+                nx = i + dx[k]
+                ny = j + dy[k]
                 if nx < 0 or nx >= n or ny < 0 or ny >= n:
                     continue
                 if graph[nx][ny] == 0:
@@ -46,18 +47,19 @@ for student, like in dict.items():
     # 가장 앞에 있는 자리가 베스트.
     print(tmp)
     graph[tmp[0][2]][tmp[0][3]] = student
-    # print('---------------------------------')
+    # print("---------------------------------")
     # for i in range(n):
     #     for j in range(n):
-    #         print(graph[i][j],end=" ")
+    #         print(graph[i][j], end=" ")
     #     print()
-    # print('---------------------------------')
+    # print("---------------------------------")
 result = 0
 for i in range(n):
     for j in range(n):
         amount = 0
         for k in range(4):
-            nx, ny = i + dx[k], j + dy[k]
+            nx = i + dx[k]
+            ny = j + dy[k]
             if nx < 0 or nx >= n or ny < 0 or ny >= n:
                 continue
             if graph[nx][ny] in dict[graph[i][j]]:
