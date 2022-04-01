@@ -19,7 +19,7 @@ def bfs():
     for i in range(N):
         for j in range(M):
             if lab[i][j] == 2:
-                queue.append([i, j])  # 바이러스가 있는 곳 저장
+                queue.append([i, j])  # 바이러스 좌표 저장
 
     while queue:
         x, y = queue.popleft()
