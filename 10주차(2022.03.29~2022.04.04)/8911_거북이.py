@@ -31,7 +31,9 @@ for i in range(n):
             else:
                 posDir -= 1
         trace.append((posX, posY))
+    print(trace)
 
     width = max(trace, key=lambda x: x[0])[0] - min(trace, key=lambda x: x[0])[0]
     height = max(trace, key=lambda x: x[1])[1] - min(trace, key=lambda x: x[1])[1]
+
     print(width * height)
