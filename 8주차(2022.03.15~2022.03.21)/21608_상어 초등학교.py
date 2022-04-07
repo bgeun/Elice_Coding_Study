@@ -64,7 +64,7 @@ for i in range(n):
                 continue
             if graph[nx][ny] in dict[graph[i][j]]:
                 amount += 1
-        # print(amount)
+        print(amount)
         if amount == 0:
             result += 0
         elif amount == 1:

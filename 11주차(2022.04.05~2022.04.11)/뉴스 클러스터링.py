@@ -1,36 +1,33 @@
-import math
-
-
 def solution(str1, str2):
     answer = 0
-    s1 = str1.lower()
-    s2 = str2.lower()
+    str1 = str1.lower()
+    str2 = str2.lower()
 
-    s1Slc, s2Slc = [], []
+    slc1 = []
+    slc2 = []
 
-    for i in range(2, len(s1) + 1):
-        tmp = s1[i - 2 : i]
+    for i in range(len(str1) - 1):
+        tmp = str1[i : i + 2]
         if tmp.isalpha():
-            s1Slc.append(tmp)
-
-    for i in range(2, len(s2) + 1):
-        tmp = s2[i - 2 : i]
+            slc1.append(tmp)
+    for i in range(len(str2) - 1):
+        tmp = str2[i : i + 2]
         if tmp.isalpha():
-            s2Slc.append(tmp)
-    if s1Slc == [] and s2Slc == []:
+            slc2.append(tmp)
+    if slc1 == [] and slc2 == []:
         return 65536
 
-    s1_copy = s1Slc.copy()
-    s2_copy = s2Slc.copy()
+    s1_copy = slc1.copy()
 
     inter = []
-    for i in s1Slc:
-        if i in s2_copy:
+
+    for i in slc1:
+        if i in slc2:
             inter.append(i)
             s1_copy.remove(i)
-            s2_copy.remove(i)
+            slc2.remove(i)
 
-    union = inter + s1_copy + s2_copy
+    union = inter + s1_copy + slc2
 
     answer = int((len(inter) / len(union)) * 65536)
 
